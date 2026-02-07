@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Advance Birthday 💖</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family: system-ui, sans-serif;
+}
+
+body{
+    min-height:100vh;
+    background:linear-gradient(180deg,#ff5fa2,#ff8fc7,#ffd6ea);
+    background-size:400% 400%;
+    animation:bgPink 10s ease infinite;
+    overflow-x:hidden;
+}
+
+@keyframes bgPink{
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+/* floating hearts */
+.heart{
+    position:fixed;
+    bottom:-30px;
+    font-size:16px;
+    opacity:.7;
+    animation:floatHeart 8s linear infinite;
+}
+
+@keyframes floatHeart{
+    from{transform:translateY(0);opacity:0}
+    10%{opacity:.7}
+    to{transform:translateY(-120vh);opacity:0}
+}
+
+.container{
+    width:100%;
+    padding:20px 14px 80px;
+}
+
+.card{
+    background:rgba(255,255,255,.18);
+    backdrop-filter:blur(18px);
+    border-radius:26px;
+    padding:26px 20px 36px;
+    color:#fff;
+    box-shadow:0 25px 60px rgba(0,0,0,.3);
+}
+
+h1{
+    text-align:center;
+    font-size:26px;
+    margin-bottom:18px;
+    animation:glow 2.5s infinite alternate;
+}
+
+@keyframes glow{
+    from{text-shadow:0 0 8px #fff}
+    to{text-shadow:0 0 28px #ffe0f0}
+}
+
+/* paragraphs – AUTO SHOW */
+p{
+    font-size:16px;
+    line-height:2;
+    margin-bottom:18px;
+    animation:fadeUp 1.2s ease forwards;
+}
+
+p:nth-child(2){animation-delay:.2s}
+p:nth-child(3){animation-delay:.4s}
+p:nth-child(4){animation-delay:.6s}
+p:nth-child(5){animation-delay:.8s}
+p:nth-child(6){animation-delay:1s}
+p:nth-child(7){animation-delay:1.2s}
+
+@keyframes fadeUp{
+    from{opacity:0; transform:translateY(20px)}
+    to{opacity:1; transform:translateY(0)}
+}
+
+/* gift */
+.gift{
+    margin:34px auto 0;
+    width:110px;
+    height:110px;
+    background:#ff3f8b;
+    border-radius:18px;
+    position:relative;
+    animation:giftFloat 2s infinite;
+}
+
+@keyframes giftFloat{
+    0%,100%{transform:translateY(0)}
+    50%{transform:translateY(-10px)}
+}
+
+.gift::before{
+    content:'';
+    position:absolute;
+    width:18px;
+    height:110px;
+    background:#fff;
+    left:50%;
+    transform:translateX(-50%);
+}
+
+.gift::after{
+    content:'';
+    position:absolute;
+    width:110px;
+    height:18px;
+    background:#fff;
+    top:50%;
+    transform:translateY(-50%);
+}
+
+.lid{
+    position:absolute;
+    width:120px;
+    height:34px;
+    background:#ff6fae;
+    top:-26px;
+    left:-5px;
+    border-radius:18px;
+    transition:1s ease;
+}
+
+.gift.open .lid{
+    transform:rotate(-25deg) translate(-15px,-15px);
+}
+
+.tap{
+    text-align:center;
+    margin-top:8px;
+    font-size:13px;
+    opacity:.85;
+}
+
+/* gift message */
+.giftMsg{
+    display:none;
+    text-align:center;
+    margin-top:26px;
+    font-size:17px;
+    line-height:1.8;
+    animation:fadeUp 1.2s ease forwards;
+}
+
+.loveText{
+    margin-top:18px;
+    font-size:19px;
+    font-weight:600;
+}
+</style>
+</head>
+
+<body>
+
+<script>
+for(let i=0;i<20;i++){
+    let h=document.createElement("div");
+    h.className="heart";
+    h.innerHTML="💗";
+    h.style.left=Math.random()*100+"%";
+    h.style.animationDelay=Math.random()*8+"s";
+    document.body.appendChild(h);
+}
+</script>
+
+<div class="container">
+<div class="card">
+
+<h1>🎂 Advance Happy Birthday 🎂</h1>
+
+<p>अभी तुम्हारा जन्मदिन आया नहीं है, लेकिन कुछ लोग इतने खास होते हैं कि उनके लिए तारीख का इंतज़ार नहीं किया जाता।</p>
+
+<p>ये विश थोड़ी सी एडवांस है, पर इसमें जो एहसास हैं वो बिल्कुल सच्चे और दिल से निकले हुए हैं।</p>
+
+<p>तुम्हारी एक मुस्कान भी मेरे दिन को बेहतर बना देती है, और तुम्हारा साथ हर पल को खास बना देता है।</p>
+
+<p>मैं दुआ करता हूँ कि तुम्हारी ज़िंदगी हमेशा खुशियों से भरी रहे, और हर सपना बिना रुके पूरा हो।</p>
+
+<p>आने वाला साल तुम्हारे लिए नई शुरुआत, नई उम्मीदें और ढेर सारी खूबसूरत यादें लेकर आए।</p>
+
+<p>चाहे हम पास हों या दूर, दिल से जुड़ाव हमेशा बना रहेगा, क्योंकि ये रिश्ता बहुत खास है।</p>
+
+<div class="gift" onclick="openGift(this)">
+    <div class="lid"></div>
+</div>
+<div class="tap">👆 यहाँ टैप करो</div>
+
+<div class="giftMsg" id="msg">
+🎁 तुम खुद मेरे लिए एक सबसे खूबसूरत तोहफ़ा हो 💖  
+एडवांस में ही सही, लेकिन दिल से — Happy Birthday 🫶✨  
+<div class="loveText">
+Love you so much my partner 🫶🏻💕😚🥹
+</div>
+</div>
+
+</div>
+</div>
+
+<script>
+function openGift(el){
+    el.classList.add("open");
+    document.getElementById("msg").style.display="block";
+}
+</script>
+
+</body>
+</html>
